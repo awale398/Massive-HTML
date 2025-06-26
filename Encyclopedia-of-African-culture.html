@@ -930,5 +930,163 @@
 
          </article>
      </main>
+     <footer>
+        <form action="/submit" method="POST" enctype="multipart/form-data" target="_blank" novalidate>
+            <!-- PERSONAL INFORMATION -->
+             <fieldset>
+                <legend>Personal information</legend>
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required minlength="3" maxlength="50" autocomplete="name" autofocus> <br>
+
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="18" max="99" step="1"> <br>
+
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday"> <br>
+
+                <label for="gender">Gender:</label> <br>
+                <input type="radio" id="male" name="gender" value="male" checked>
+                <label for="male">Male:</label> <br>
+                <input type="radio" id="female" name="gender" value="female" checked>
+                <label for="female">Female:</label> <br>
+                <input type="radio" id="other" name="gender" value="other" checked>
+                <label for="other">Other:</label>
+             </fieldset>
+
+             <!-- Contact information -->
+              <fieldset>
+                <legend>Contact Information</legend>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required> <br>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone"> <br>
+
+                <label for="website">Website:</label>
+                <input type="url" id="website" name="website">
+              </fieldset>
+
+              <!-- Preferences -->
+               <fieldset>
+                <legend>Preferences</legend>
+                <label for="language">Programming Language:</label>
+                <select name="language" id="language">
+                    <optgroup label="Programming">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="javascript">JAVASCRIPT</option>
+                    </optgroup>
+                    </select> <br>
+                    <label for="language spoken">Language Spoken</label>
+                    <select name="language spoken" id="language spoken">
+                    <optgroup label="spoken">
+                        <option value="english">English</option>
+                        <option value="kiswahili">Kiswahili</option>
+                        <option value="somali">Somali</option>
+                        <option value="arabic">Arabic</option>
+                    </optgroup>
+                </select> <br>
+                <label for="colors">Favourite Colors:</label> <br>
+                <input type="checkbox" name="colors" value="red" checked> Red <br>
+                <input type="checkbox" name="colors" value="blue"> Blue <br>
+                <input type="checkbox" name="colors" value="green"> Green
+               </fieldset>
+               <!-- File Upload -->
+                <fieldset>
+                    <legend>Upload Files:</legend>
+                    <label for="resume">Upload Resume (PDF):</label>
+                    <input type="file" id="resume" name="resume" accept=".pdf" required> <br>
+
+                    <label for="images">Upload Images:</label>
+                    <input type="file" id="images" name="images[]" accept="image/*" multiple>
+                </fieldset>
+
+                <!-- Text Area/ Survey -->
+                 <fieldset>
+                    <legend>Survey:</legend>
+                    <label for="experience">Describe your experience:</label> <br>
+                    <textarea name="experience" id="experience" rows="5" cols="40" maxlength="500" placeholder="Tell us about your coding journey..."></textarea>
+                 </fieldset>
+
+                 <!-- Authentication -->
+                  <fieldset>
+                    <legend>Authentication:</legend>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required> <br>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required pattern=".{8,}"> <br>
+
+                    <input type="hidden" name="csrf_token" value="123456789">
+                  </fieldset>
+
+                  
+                    <!-- Feedback Rationg -->
+                     <fieldset>
+                        <legend>Feedback:</legend> <br>
+                        <label for="rating">Rate your experience (1-10)</label>
+                        <input type="range" id="rating" name="rating" min="1" max="10"> <br>
+
+                        <label for="favcolor">Pick your favourite color:</label>
+                        <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+                     </fieldset>
+
+                     <!-- Payment Section -->
+                      <fieldset>
+                        <legend>Payment Info:</legend> <br>
+                        <label for="cardname">Cardholder Name:</label> 
+                        <input type="text" id="cardname" name="cardname"> <br>
+
+                        <label for="cardnum">CardNumber:</label>
+                        <input type="number" id="cardnum" name="cardnum"> <br>
+
+                        <label for="expdate">Expiration:</label>
+                        <input type="month" id="expdate" name="expdate"> <br>
+                      </fieldset>
+
+                      <!-- Setting -->
+                       <fieldset>
+                        <legend>Setting:</legend>
+                        <label for="mode">Mode:</label>
+                        <input type="radio" id="light" name="mode" value="light"> light
+                        <input type="radio" id="dark" name="mode" value="dark"> Dark <br>
+
+                        <label for="notification">Enable Notification:</label>
+                        <input type="checkbox" id="notification" name="notification" checked> <br>
+
+                        <label for="search">Seach Setting:</label>
+                        <input type="search" id="search" name="search">
+                       </fieldset>
+
+                       <!-- Autocomplete with Datalist -->
+                        <fieldset>
+                            <legend>Country Autocomplete</legend>
+                            <label for="country">Country:</label>
+                            <input list="countries" id="country" name="country">
+                            <datalist id="countries">
+                                <option value="kenya">Kenya</option>
+                                <option value="uganda">Uganda</option>
+                                <option value="somalia">Somalia</option>
+                                <option value="tanzania">Tanzania</option>
+                            </datalist>
+                        </fieldset>
+
+                        <!-- Capcha simulation -->
+                         <fieldset>
+                            <legend>Verification</legend>
+                            <label for="captcha">What is 4 + 5?</label>
+                            <input type="text" id="captcha" name="captcha" required>
+                         </fieldset>
+
+                         <!-- Form controls -->
+                          <fieldset>
+                            <legend>Controls</legend>
+                            <input type="submit" value="Submit Form">
+                            <input type="reset" value="Reset All">
+                            <input type="button" value="Fake Button">
+                          </fieldset>
+                  
+        </form>
+     </footer>
 </body>
 </html>
